@@ -3,6 +3,7 @@ public class Ex04_04 {
 	
 	
 	static void f1(){}
+	static void f2(){}
 
 	public static void main(String[] args) 
 	{
