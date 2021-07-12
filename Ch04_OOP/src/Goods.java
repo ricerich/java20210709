@@ -13,8 +13,8 @@ public class Goods
 		
 	}
 	
-	public Goods(String name, int price, int numberOfStock, int sold) {
-		this.name = name;
+	public Goods(String _name, int price, int numberOfStock, int sold) {
+		name = _name;
 		this.price = price;
 		this.numberOfStock = numberOfStock;
 		this.sold = sold;
