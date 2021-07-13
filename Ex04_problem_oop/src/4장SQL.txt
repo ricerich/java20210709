@@ -1,0 +1,39 @@
+--6. 다음에 해당하는 뷰를 작성하시오. 데이터베이스는 마당서점 데이터베이스를 이용한다.
+--
+--(1) 판매가격이 20,000원 이상인 도서의 
+--도서번호, 도서이름, 고객이름, 출판사, 판매가격을 보여주는 highorders 뷰를 생성하시오.
+CREATE VIEW highorders
+AS
+    SELECT BOOK.BOOKID, BOOKNAME, NAME, PUBLISHER, SALEPRICE
+    FROM CUSTOMER, ORDERS, BOOK
+    WHERE CUSTOMER.CUSTID = ORDERS.CUSTID 
+      AND ORDERS.BOOKID = BOOK.BOOKID;
+
+--(2) 생성한 뷰를 이용하여 판매된 도서의 이름과 고객의 이름을 출력하는 SQL 문을 작성하시오.
+    SELECT BOOKNAME, NAME
+    FROM highorders;
+
+--(3) highorders 뷰를 변경하고자 한다. 판매가격 속성을 삭제하는 명령을 수행하시오. 
+CREATE OR REPLACE VIEW highorders
+AS 
+    SELECT BOOK.BOOKID, BOOKNAME, NAME, PUBLISHER
+    FROM CUSTOMER, ORDERS, BOOK
+    WHERE CUSTOMER.CUSTID = ORDERS.CUSTID 
+      AND ORDERS.BOOKID = BOOK.BOOKID;
+      
+--삭제 후 (2)번 SQL 문을 다시 수행하시오.
+
+--13. [마당서점 데이터베이스 인덱스] 마당서점 데이터베이스에서 
+--다음 SQL 문을 수행하고 데이터베이스가 인덱스를 사용하는 과정을 확인하시오.
+
+--(1) 다음 SQL 문을 수행해본다.
+	SELECT name FROM Customer WHERE name LIKE '박세리';
+--(2) 실행 계획을 살펴본다. 실행 계획은 [F10]키를 누른 후 [계획 설명]탭을 선택하면 표시된다.
+--(3) Customer 테이블에 name으로 인덱스를 생성하시오. 생성 후 (1)번의 질의를 다시 수행하고 실행 
+--    계획을 살펴보시오.
+    CREATE INDEX CID_IDX ON CUSTOMER(NAME);
+
+--(4) 같은 질의에 대한 두 가지 실행 계획을 비교해보시오.
+--(5) (3)번에서 생성한 인덱스를 삭제하시오.
+    DROP INDEX CID_IDX;
+

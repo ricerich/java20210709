@@ -43,13 +43,9 @@ public class MonthSchedule
 					System.out.println("1,2,3 중에 입력하시오!");
 //					break;
 			}
-			
 		}
-		
 	}
-
-
-
+	
 	private void input() 
 	{
 		System.out.print("날짜(1~30)?");
