@@ -8,8 +8,6 @@ public class Ex04_09 {
 		
 		int arr3[] = ArrayUtil.concat(arr1, arr2); 
 		ArrayUtil.print(arr3);
-		
-
 	}
 
 }
