@@ -67,7 +67,10 @@ public class PhoneBook
 			}
 			
 			String tel = search(name);
-			System.out.println(name+ "의 번호는 "+tel+" 입니다!");
+			if(tel.equals(""))
+				System.out.println(name+"의 전화번호는 없습니다.");
+			else
+				System.out.println(name+ "의 번호는 "+tel+" 입니다!");
 //			sc.close();
 		}
 		
