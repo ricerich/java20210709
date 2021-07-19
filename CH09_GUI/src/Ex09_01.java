@@ -5,7 +5,6 @@ public class Ex09_01 {
 	{
 //		MyFrame mf = new MyFrame();
 		new MyFrame();
-
 	}
 
 }
