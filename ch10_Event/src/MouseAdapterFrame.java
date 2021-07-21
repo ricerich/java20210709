@@ -3,16 +3,17 @@ import java.awt.Container;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class MouseAdapterEx extends JFrame 
+public class MouseAdapterFrame extends JFrame 
 {
 	private JLabel la = new JLabel("Hello"); 
 
-	public MouseAdapterEx() 
+	public MouseAdapterFrame() 
 	{
 		setTitle("Mouse 이벤트 예제");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
-		c.addMouseListener(new MyMouseAdapter()); 
+		
+		c.addMouseListener(new MyMouseAdapter(la)); 
 
 		c.setLayout(null);
 		la.setSize(50, 20);
