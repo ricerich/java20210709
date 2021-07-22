@@ -4,6 +4,7 @@ import java.awt.*;
 
 public class ClickAndDoubleClickEx extends JFrame 
 { 
+	
 	public ClickAndDoubleClickEx() {
 		setTitle("Click and DoubleClick ¿¹Á¦");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
